@@ -14,12 +14,8 @@ fizzbuzzSum = loop initialInd initialSum
             then loop nextInd nextSum
         else
             loop nextInd sum
-      else finalize i sum
+      else sum
       where
         shouldLoop = i <= 1000
         nextInd = i+1
         nextSum = sum+i
-
-    finalize :: Int -> Int -> Int
-    finalize a sum = sum
-    

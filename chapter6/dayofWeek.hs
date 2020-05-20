@@ -27,7 +27,13 @@ instance Eq a => Eq (Identity a) where (==) (Identity v) (Identity v') = v == v'
 
 
 
-data StringOrInt a = StringOrInt Int | String a deriving Show
+data StringOrInt 
+    = TisAnInt Int 
+    | TisAString String
+    deriving (Show)
 
-instance Eq a => Eq (StringOrInt a) where (==) (StringOrInt v) (StringOrInt v') = v == v'
+instance Eq StringOrInt where
+    TisAnInt a == TisAnInt b = a == b
+    TisAString a == TisAString b = a == b
+    _ == _ = False
 
