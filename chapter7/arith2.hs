@@ -25,5 +25,3 @@ main = do
     print ((negate . addOne) 0) 
     print ((addOne . addOne . addOne
             . negate . addOne) 0)
-
-
