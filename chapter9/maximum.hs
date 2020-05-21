@@ -1,6 +1,7 @@
-myMaximumBy :: Ord a => (a -> a -> Ordering) -> [a] -> a
-myMaximumBy c (s:xs)
-    | compare xs [] == EQ = s
-    | otherwise = max pastMax s
-    where 
-        pastMax = myMaximumBy c xs
+myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
+myMaximumBy _ [x] = x
+myMaximumBy c (s:xs) = myMax x (myMaximumBy c xs)
+    where myMax a b 
+        case c a b of GT -> a; _ -> b
+
+-- | max element of the list

@@ -24,3 +24,5 @@ capAndRet a
     | otherwise  = ttoUpper x
     where
         x = head a
+
+-- | cap 
